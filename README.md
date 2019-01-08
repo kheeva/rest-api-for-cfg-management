@@ -21,6 +21,7 @@ postgresql uses 127.0.0.1:5432
 
 # Use the app
 **Add new user**:
+
     url: `http://127.0.0.1:8888/user`
     
     Send POST request to url with data fields:
@@ -28,18 +29,32 @@ postgresql uses 127.0.0.1:5432
      - `password`.
     Field 'username' must be `unique`.
 
+form example:
+```html
+<form action="http://127.0.0.1:8888/user" method="post" accept-charset="utf-8"
+      enctype="multipart/form-data">
+
+    <label for="add_user">add_user</label>
+    <input id="username" name="username" type="hidden" value="kheeva" />
+    <input id="password" name="password" type="hidden" value="123123" />
+    <input type="submit" value="submit" />
+</form>
+```
+
 **Get list of aviable configurations for a user**:
+
     url: `http://127.0.0.1:8888/user?username=username`
     
     Send GET request to url with query parameter username.
 
 **Load a cfg to server**:
+
     url: `http://127.0.0.1:8888/cfg`
     
     Send POST request with field `type=file` and `name=cfg`
 
-Form example:
-```buildoutcfg
+form example:
+```html
 <form action="http://127.0.0.1:8888/cfg" method="post" accept-charset="utf-8"
       enctype="multipart/form-data">
 
@@ -50,18 +65,21 @@ Form example:
 ```
 
 **Get a cfg from a server**:
+
     url: `http://127.0.0.1:8888/cfg?cfg_id={id}`
     id - positive integer
     Send GET request to url.
 
-Bind a cfg to a user:
+**Bind a cfg to a user**:
+
     url: `http://127.0.0.1:8888/bind`
     
     Send POST request with data fields:
     - username (varchar)
     - cfg_id (positive integer)
+    
 Example POST from:
-```buildoutcfg
+```html
 <form action="http://127.0.0.1:8888/bind" method="post" accept-charset="utf-8"
       enctype="multipart/form-data">
 
