@@ -7,9 +7,9 @@ At first, install and run docker engine.
 After that do several steps:
 
 1) get code from github
-```git clone https://github.com/kheeva/rest-api-for-cfg-management.git
-cd rest-api-for-cfg-management/
-```
+`git clone https://github.com/kheeva/rest-api-for-cfg-management.git`
+
+`cd rest-api-for-cfg-management/`
 
 2) build docker containers
 ```buildoutcfg
