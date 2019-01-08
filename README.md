@@ -9,6 +9,7 @@ After that do several steps:
 1) get code from github
 `git clone https://github.com/kheeva/rest-api-for-cfg-management.git`
 
+ cd to the project
 `cd rest-api-for-cfg-management/`
 
 2) build docker containers
